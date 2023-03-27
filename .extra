@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# ssh to pi
+alias pi="ssh -i ~/.ssh/pi_rsa pi@pi.local"
+
+# convert mkv to mp4
+function mkv2mp4() {
+	ffmpeg -i "$1" -codec copy "${1%.mkv}.mp4";
+}
+
+# convert mov to mp4
+function mov2mp4() {
+	ffmpeg -i "$1" -codec copy "${1%.mov}.mp4";
+}
+
+# pi file transfer
+function pift() {
+	scp -i ~/.ssh/pi_rsa "$1" pi@pi.local:"$2";
+}
+
+# nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

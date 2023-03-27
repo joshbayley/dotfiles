@@ -35,3 +35,17 @@ export GPG_TTY=$(tty);
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
+
+# postgres (bapbap)
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH";
+export PGDATA="/Users/josh/.postgres";
+
+# homebrew sbin
+export PATH="/usr/local/sbin:$PATH";
+
+# nvm
+export NVM_DIR="$HOME/.nvm";
+
+# pyenv
+export PATH="$(pyenv root)/shims:$PATH"
+export EMSDK_PYTHON="/Users/josh/.pyenv/shims/python2"
